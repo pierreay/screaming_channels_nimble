@@ -20,6 +20,7 @@
 #include <assert.h>
 #include <string.h>
 
+#include "console/console.h"
 #include "sysinit/sysinit.h"
 #include "os/os.h"
 #include "bsp/bsp.h"
@@ -62,6 +63,7 @@ main(int argc, char **argv)
         os_time_delay(OS_TICKS_PER_SEC);
 
         /* Toggle the LED */
+        console_printf("Toggling the LED!");
         hal_gpio_toggle(g_led_pin);
     }
     assert(0);
