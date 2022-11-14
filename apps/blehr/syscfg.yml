@@ -23,6 +23,18 @@ syscfg.vals:
     BLE_ROLE_OBSERVER: 0
     BLE_ROLE_PERIPHERAL: 1
 
+    # Enable LE Start Encryption during Pairing and Connection with the Security Module (SM).
+    BLE_SM_LEGACY: 1
+    BLE_SM_BONDING: 1
+    BLE_SM_OUR_KEY_DIST: 1
+    BLE_SM_THEIR_KEY_DIST: 1
+    BLE_SM_SC_DEBUG_KEYS: 1
+
+    # Enable smp commands.
+    STATS_MGMT: 1
+    LOG_MGMT: 1
+    CONFIG_MGMT: 1
+
     # Disable unused eddystone feature.
     BLE_EDDYSTONE: 0
 
