@@ -54,6 +54,9 @@ syscfg.vals:
     # Configure DIS
     BLE_SVC_DIS_FIRMWARE_REVISION_READ_PERM: 1
 
+    # Enable all logging level.
+    LOG_LEVEL: 0
+
     # Log reboot messages to a flash circular buffer.
     REBOOT_LOG_FCB: 1
     LOG_FCB: 1
