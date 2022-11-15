@@ -221,6 +221,9 @@ bleprph_gap_event(struct ble_gap_event *event, void *arg)
 
     case BLE_GAP_EVENT_ENC_CHANGE:
         /* Encryption has been enabled or disabled for this connection. */
+        for (int i = 0; i < 100; i++) {
+            MODLOG_DFLT(INFO, "loop to waste time after encryption has been enabled\n");
+        }
         MODLOG_DFLT(INFO, "encryption change event; status=%d ",
                     event->enc_change.status);
         rc = ble_gap_conn_find(event->connect.conn_handle, &desc);
