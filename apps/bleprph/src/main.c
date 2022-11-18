@@ -353,6 +353,7 @@ main_fn(int argc, char **argv)
      * As the last thing, process events from default event queue.
      */
     while (1) {
+        // console_printf("Console printf example!\n");
         os_eventq_run(os_eventq_dflt_get());
     }
     return 0;

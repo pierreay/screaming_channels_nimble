@@ -45,3 +45,4 @@ pkg.deps:
 
 pkg.req_apis:
     - log
+    - console
