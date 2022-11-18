@@ -56,6 +56,8 @@ syscfg.vals:
 
     # Enable all logging level.
     LOG_LEVEL: 0
+    # Enable logging of BLE Host (INFO).
+    BLE_HS_LOG_LVL: 1
 
     # Log reboot messages to a flash circular buffer.
     REBOOT_LOG_FCB: 1
