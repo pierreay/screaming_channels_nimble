@@ -17,6 +17,11 @@
 #
 
 syscfg.defs:
+    CONSOLE_LOG:
+        description: >
+            Enable custom console_printf used during instrumentation.
+        value: 0
+
     BLEPRPH_LE_PHY_SUPPORT:
         description: >
             Enable support for changing PHY preference on active connection.
@@ -57,9 +62,12 @@ syscfg.vals:
     # Configure DIS
     BLE_SVC_DIS_FIRMWARE_REVISION_READ_PERM: 1
 
-    # Enable all logging level.
+    # Logging.
+    # Enable all custom console logging.
+    CONSOLE_LOG: 1
+    # Enable all default logging level.
     LOG_LEVEL: 0
-    # Enable logging of BLE Host (INFO).
+    # Enable logging of BLE Host (at INFO level).
     BLE_HS_LOG_LVL: 1
 
     # Log reboot messages to a flash circular buffer.
