@@ -63,12 +63,14 @@ syscfg.vals:
     BLE_SVC_DIS_FIRMWARE_REVISION_READ_PERM: 1
 
     # Logging.
-    # Enable all custom console logging [0 = disabled ; 1 = enabled].
+    # All custom console logging [0 = disabled ; 1 = enabled].
     CONSOLE_LOG: 1
-    # Enable all default logging level [0 = enable DEBUG and INFO ; 1 = enable INFO ; 255 = disabled].
+    # All default logging level [0 = enable DEBUG and INFO ; 1 = enable INFO ; 255 = disabled].
     LOG_LEVEL: 0
-    # Enable logging of BLE Host [0 = enable DEBUG and INFO ; 1 = enable INFO ; 255 = disabled].
+    # Logging of BLE Host [0 = enable DEBUG and INFO ; 1 = enable INFO ; 255 = disabled].
     BLE_HS_LOG_LVL: 1
+    # Logging of session key calculation [0 = enabled ; 1 = disabled]
+    BLE_LL_ENCRYPT_DEBUG_DISABLE: 0
 
     # Log reboot messages to a flash circular buffer.
     REBOOT_LOG_FCB: 1
