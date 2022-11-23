@@ -51,6 +51,9 @@ syscfg.vals:
     BLE_SM_THEIR_KEY_DIST: 1
     BLE_SM_SC_DEBUG_KEYS: 1
 
+    # Disable nRF52's hardware AES-ECB peripheral (hardware encryption) and enable TinyCrypt (software encryption).
+    BLE_CRYPTO_HW: 0
+
     # Configure DIS
     BLE_SVC_DIS_FIRMWARE_REVISION_READ_PERM: 1
 
