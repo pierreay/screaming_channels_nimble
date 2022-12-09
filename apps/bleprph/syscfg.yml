@@ -59,6 +59,11 @@ syscfg.vals:
     # Disable nRF52's hardware AES-ECB peripheral (hardware encryption) and enable TinyCrypt (software encryption).
     BLE_CRYPTO_HW: 0
 
+    # TinyCrypt instrumentation [0 = disabled ; 1 = enabled].
+    TINYCRYPT_INSTR_LOOP_ENABLE: 0
+    # TinyCrypt loops [default = 1].
+    TINYCRYPT_INSTR_LOOP_NB: 3
+
     # Configure DIS
     BLE_SVC_DIS_FIRMWARE_REVISION_READ_PERM: 1
 
