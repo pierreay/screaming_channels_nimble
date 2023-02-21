@@ -10,4 +10,3 @@ set -e
 newt build "nrf52_boot"
 newt build "nrf52_$1"
 newt create-image "nrf52_$1" 1.0.0
-./flash.sh "$1"
