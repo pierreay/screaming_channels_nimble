@@ -30,3 +30,4 @@ tags
 *.swp
 *.swo
 .dir-locals.el
+Makefile.emacs
