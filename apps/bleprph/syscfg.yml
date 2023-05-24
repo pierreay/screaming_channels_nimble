@@ -60,7 +60,7 @@ syscfg.vals:
     BLE_CRYPTO_HW: 0
 
     # TinyCrypt instrumentation [0 = disabled ; 1 = enabled].
-    TINYCRYPT_INSTR_LOOP_ENABLE: 0
+    TINYCRYPT_INSTR_LOOP_ENABLE: 1
     # TinyCrypt loops [default = 1].
     TINYCRYPT_INSTR_LOOP_NB: 5
 
