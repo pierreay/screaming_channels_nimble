@@ -10,7 +10,6 @@ app=$(find . -name "$1".hex)
 
 echo "BTLDR=$btldr"
 echo "APP=$app"
-read -p "Continue?"
 
 Bin2Hex.py -b "$btldr" -o /tmp/mynewt-bootloader.hex
 mergehex -m /tmp/mynewt-bootloader.hex "$app" -o /tmp/mynewt-firmware.hex
