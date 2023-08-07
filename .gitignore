@@ -29,5 +29,3 @@ tags
 .DS_Store
 *.swp
 *.swo
-.dir-locals.el
-Makefile.emacs
