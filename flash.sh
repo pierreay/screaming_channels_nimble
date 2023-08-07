@@ -11,7 +11,7 @@ app=$(find . -name "$1".hex)
 echo "BTLDR=$btldr"
 echo "APP=$app"
 
-Bin2Hex.py -b "$btldr" -o /tmp/mynewt-bootloader.hex
+./Bin2Hex.py -b "$btldr" -o /tmp/mynewt-bootloader.hex
 mergehex -m /tmp/mynewt-bootloader.hex "$app" -o /tmp/mynewt-firmware.hex
 nrfjprog -f nrf52 --program /tmp/mynewt-firmware.hex --chiperase
 nrfjprog -f nrf52 --reset
