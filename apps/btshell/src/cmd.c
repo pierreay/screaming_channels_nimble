@@ -45,6 +45,23 @@
 
 #define BTSHELL_MODULE "btshell"
 
+/* * Commands definition */
+
+static int
+cmd_my_hello_world(int argc, char **argv)
+{
+    int rc;
+
+    rc = parse_arg_all(argc - 1, argv + 1);
+    if (rc != 0) {
+        return rc;
+    }
+
+    console_printf("Hello world!\n");
+
+    return 0;
+}
+
 int
 cmd_parse_conn_start_end(uint16_t *out_conn, uint16_t *out_start,
                          uint16_t *out_end)
@@ -488,6 +505,14 @@ static const struct shell_param advertise_configure_params[] = {
     {"include_tx_power", "include TX power in PDU, usage: =[0-1], default: 0"},
     {"scan_req_notif", "enable Scan Request notification usage: =[0-1], default: 0"},
     {NULL, NULL}
+};
+
+/* * Commands help */
+
+static const struct shell_cmd_help my_hello_world_help = {
+    .summary = "print my hello world",
+    .usage = NULL,
+    .params = NULL,
 };
 
 static const struct shell_cmd_help advertise_configure_help = {
@@ -4179,7 +4204,17 @@ static const struct shell_cmd_help sync_stats_help = {
 #endif
 #endif
 
+/* * Commands declaration */
+
 static const struct shell_cmd btshell_commands[] = {
+    {
+        .sc_cmd = "my-hello-world",
+        .sc_cmd_func = cmd_my_hello_world,
+#if MYNEWT_VAL(SHELL_CMD_HELP)
+        // .help = &my_hello_world_help,
+        .help = NULL,
+#endif
+    },
 #if MYNEWT_VAL(BLE_EXT_ADV)
     {
         .sc_cmd = "advertise-configure",
