@@ -1,12 +1,23 @@
+# blinky
+# bleprph
+TARGETAPP=bleprph
+
 help:
 	@echo make all
 	@echo make compile
 	@echo make flash
+	@echo make target
 
 all: flash
 
 compile:
-	./compile.sh bleprph
+	./compile.sh ${TARGETAPP}
 
 flash: compile
-	./flash.sh bleprph
+	./flash.sh ${TARGETAPP}
+
+target:
+	newt target create nrf52_${TARGETAPP}
+	newt target set nrf52_${TARGETAPP} app=apps/${TARGETAPP}
+	newt target set nrf52_${TARGETAPP} bsp=@apache-mynewt-core/hw/bsp/nordic_pca10040
+	newt target set nrf52_${TARGETAPP} build_profile=debug

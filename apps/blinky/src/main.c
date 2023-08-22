@@ -63,7 +63,7 @@ main(int argc, char **argv)
         os_time_delay(OS_TICKS_PER_SEC);
 
         /* Toggle the LED */
-        console_printf("Toggling the LED!");
+        console_printf("Toggling the LED!\n");
         hal_gpio_toggle(g_led_pin);
     }
     assert(0);
