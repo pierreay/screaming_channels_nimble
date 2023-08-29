@@ -42,7 +42,37 @@ syscfg.defs:
             respectively.
         value: "(int[]){ LED_1, LED_2, LED_3 }"
 
+# * syscfg.vals
+
 syscfg.vals:
+  
+# ** Screaming Channels Instrumentation
+
+    # TX power [dBm]. Default to 0 = 1mW. Can be positive or negative. Maximum
+    # is 4 dBm for nRF52 which is a power class 2 device. Increasing it makes
+    # the leak clearly more visible.
+    BLE_LL_TX_PWR_DBM: 4
+
+    # Disable [0] nRF52's hardware AES-ECB peripheral (hardware encryption) which enable TinyCrypt (software encryption).
+    BLE_CRYPTO_HW: 0
+    # TinyCrypt instrumentation by looping [0 = disabled ; 1 = enabled].
+    TINYCRYPT_INSTR_LOOP_ENABLE: 1
+    # TinyCrypt loops [default = 1].
+    TINYCRYPT_INSTR_LOOP_NB: 10
+    # SKD_S instrumentation by fixed value [0 = disabled ; 1 = enabled].
+    BLE_LL_INSTR_SKDS_FIXED_ENABLE: 0
+
+    # All custom console logging [0 = disabled ; 1 = enabled].
+    CONSOLE_LOG: 0
+    LOG_LEVEL: 255
+    # All default logging level for MODLOG_DFLT [0 = enable DEBUG and INFO ; 1 = enable INFO ; 255 = disabled].
+    # Logging of BLE Host [0 = enable DEBUG and INFO ; 1 = enable INFO ; 255 = disabled].
+    BLE_HS_LOG_LVL: 255
+    # Logging of session key calculation [0 = enabled ; 1 = disabled]
+    BLE_LL_ENCRYPT_DEBUG_DISABLE: 1
+
+# ** Original Configuration
+    
     # Disable central and observer roles.
     BLE_ROLE_BROADCASTER: 1
     BLE_ROLE_CENTRAL: 0
@@ -56,29 +86,8 @@ syscfg.vals:
     BLE_SM_THEIR_KEY_DIST: 1
     BLE_SM_SC_DEBUG_KEYS: 1
 
-    # Disable nRF52's hardware AES-ECB peripheral (hardware encryption) and enable TinyCrypt (software encryption).
-    BLE_CRYPTO_HW: 0
-
-    # TinyCrypt instrumentation [0 = disabled ; 1 = enabled].
-    TINYCRYPT_INSTR_LOOP_ENABLE: 0
-    # TinyCrypt loops [default = 1].
-    TINYCRYPT_INSTR_LOOP_NB: 5
-
-    # SKD_S instrumentation [0 = disabled ; 1 = enabled].
-    BLE_LL_INSTR_SKDS_FIXED_ENABLE: 0
-
     # Configure DIS
     BLE_SVC_DIS_FIRMWARE_REVISION_READ_PERM: 1
-
-    # Logging.
-    # All custom console logging [0 = disabled ; 1 = enabled].
-    CONSOLE_LOG: 0
-    LOG_LEVEL: 255
-    # All default logging level for MODLOG_DFLT [0 = enable DEBUG and INFO ; 1 = enable INFO ; 255 = disabled].
-    # Logging of BLE Host [0 = enable DEBUG and INFO ; 1 = enable INFO ; 255 = disabled].
-    BLE_HS_LOG_LVL: 255
-    # Logging of session key calculation [0 = enabled ; 1 = disabled]
-    BLE_LL_ENCRYPT_DEBUG_DISABLE: 1
 
     # Log reboot messages to a flash circular buffer.
     REBOOT_LOG_FCB: 1
