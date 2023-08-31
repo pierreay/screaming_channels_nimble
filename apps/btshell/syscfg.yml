@@ -22,6 +22,9 @@ syscfg.defs:
         value: 1
 
 syscfg.vals:
+    # Enable Extended Advertisement mode.
+    BLE_EXT_ADV: 0
+
     # Enable the shell task.
     SHELL_TASK: 1
 
