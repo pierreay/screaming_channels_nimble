@@ -1,5 +1,3 @@
-# blinky
-# bleprph
 TARGETAPP=bleprph
 
 help:
@@ -7,7 +5,7 @@ help:
 	@echo make compile
 	@echo make flash
 	@echo make target
-	@echo TARGETAPP=bleprph
+	@echo "TARGETAPP=[bleprph|blinky|btshell]"
 
 all: flash
 
