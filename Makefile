@@ -7,6 +7,7 @@ help:
 	@echo make compile
 	@echo make flash
 	@echo make target
+	@echo TARGETAPP=bleprph
 
 all: flash
 
