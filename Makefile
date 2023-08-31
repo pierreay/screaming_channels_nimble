@@ -3,7 +3,7 @@
 TARGETAPP=bleprph
 
 help:
-	@echo make all
+	@echo make all: flash compile
 	@echo make compile
 	@echo make flash
 	@echo make target
