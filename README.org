@@ -1,0 +1,11 @@
+* Codebase exploration
+
+While I'm searching inside the code base, when I'm finding something
+interesting, I put a comment appended with =SC:=. To find them all:
+
+#+begin_src bash :results output
+grep -R " SC:" ./apps ./repos
+#+end_src
+
+#+RESULTS:
+: ./repos/apache-mynewt-nimble/nimble/controller/include/controller/ble_ll_conn.h:/* SC: ble_ll_conn_sm definition, the state machine of the current connection
