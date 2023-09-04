@@ -352,6 +352,11 @@ main_fn(int argc, char **argv)
     /*
      * As the last thing, process events from default event queue.
      */
+    console_printf("\n");
+    console_printf("============ \n ");
+    console_printf("bleprph main\n");
+    console_printf("============ \n ");
+    console_printf("\n");
     while (1) {
         // console_printf("Console printf example!\n");
         os_eventq_run(os_eventq_dflt_get());
