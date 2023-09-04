@@ -70,6 +70,9 @@ syscfg.vals:
     BLE_HS_LOG_LVL: 255
     # Logging of session key calculation [0 = enabled ; 1 = disabled]
     BLE_LL_ENCRYPT_DEBUG_DISABLE: 1
+    # Logging for Screaming Channels.
+    SC_LOG_TRACE_ENABLE: 0 # Function tracing.
+    SC_LOG_DUMP_ENABLE:  0 # Structure dumping.
 
 # ** Original Configuration
     
