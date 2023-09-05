@@ -58,7 +58,7 @@ syscfg.vals:
     # TinyCrypt instrumentation by looping [0 = disabled ; 1 = enabled].
     TINYCRYPT_INSTR_LOOP_ENABLE: 1
     # TinyCrypt loops [default = 1].
-    TINYCRYPT_INSTR_LOOP_NB: 10
+    TINYCRYPT_INSTR_LOOP_NB: 50
     # SKD_S instrumentation by fixed value [0 = disabled ; 1 = enabled].
     BLE_LL_INSTR_SKDS_FIXED_ENABLE: 0
 
