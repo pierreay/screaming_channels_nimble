@@ -42,6 +42,7 @@ pkg.deps:
     - "@apache-mynewt-nimble/nimble/host/services/gatt"
     - "@apache-mynewt-nimble/nimble/host/store/config"
     - "@apache-mynewt-nimble/nimble/host/util"
+    - "@apache-mynewt-nimble/nimble/screamingchannels"
 
 pkg.req_apis:
     - log

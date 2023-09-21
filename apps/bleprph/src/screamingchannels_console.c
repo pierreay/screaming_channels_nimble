@@ -1,5 +1,6 @@
 #include <string.h>
 #include "screamingchannels_console.h"
+#include "screamingchannels/misc.h"
 #include "console/console.h"
 
 static void screamingchannels_process_input(struct os_event *ev);
@@ -24,7 +25,18 @@ screamingchannels_process_input(struct os_event *ev)
     line = input->line;
     /* Do some work with line */
     if (!strcmp(line, "mode_train")) {
-        console_printf("set firmware into train collection mode!\n");
+        sc_misc_set_train_mode();
+        dump_sc_state();
+    }
+    else if (!strcmp(line, "mode_attack")) {
+        sc_misc_set_attack_mode();
+        dump_sc_state();
+    }
+    else if (!strcmp(line, "mode_dump")) {
+        dump_sc_state();
+    }
+    else {
+        console_printf("commands: mode_train mode_attack mode_dump\n");
     }
     /* Done processing line. Add the event back to the avail_queue */
     console_line_event_put(ev);
