@@ -29,3 +29,6 @@ tags
 .DS_Store
 *.swp
 *.swo
+*GPATH
+*GRTAGS
+*GTAGS
