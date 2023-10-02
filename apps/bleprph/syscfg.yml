@@ -48,6 +48,13 @@ syscfg.vals:
   
 # ** Screaming Channels Instrumentation
 
+    # Enable the radio after TinyCrypt encryption [0 = disabled ; 1 = enabled].
+    SC_TINYCRYPT_RADIO_ENABLE: 1
+    # TinyCrypt instrumentation by looping [0 = disabled ; 1 = enabled].
+    SC_TINYCRYPT_INSTR_LOOP_ENABLE: 1
+    # TinyCrypt loops [default = 1].
+    SC_TINYCRYPT_INSTR_LOOP_NB: 300
+
     # TX power [dBm]. Default to 0 = 1mW. Can be positive or negative. Maximum
     # is 4 dBm for nRF52 which is a power class 2 device. Increasing it makes
     # the leak clearly more visible.
@@ -55,12 +62,6 @@ syscfg.vals:
 
     # Disable [0] nRF52's hardware AES-ECB peripheral (hardware encryption) which enable TinyCrypt (software encryption).
     BLE_CRYPTO_HW: 0
-    # TinyCrypt instrumentation by looping [0 = disabled ; 1 = enabled].
-    # NOTE: This apply only if firmware is in "train" mode, otherwise, it is
-    # silently set to 0.
-    TINYCRYPT_INSTR_LOOP_ENABLE: 1
-    # TinyCrypt loops [default = 1].
-    TINYCRYPT_INSTR_LOOP_NB: 300
     # SKD_S instrumentation by fixed value [0 = disabled ; 1 = enabled].
     BLE_LL_INSTR_SKDS_FIXED_ENABLE: 0
 
