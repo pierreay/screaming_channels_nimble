@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include <string.h>
 #include <stdlib.h>
 #include "screamingchannels_console.h"
@@ -5,6 +6,9 @@
 #include "screamingchannels/input.h"
 #include "screamingchannels/dump.h"
 #include "console/console.h"
+
+#define INPUT_SIZE 16 // 128-bits for keys and plaintexts
+#define INPUT_BASE_OFFSET 2 // Length of k: and p: used in commands.
 
 /** String hexadecimal to char decimal conversion. */
 char str_hex_to_char_dec(char * str) {
@@ -51,10 +55,10 @@ screamingchannels_process_input(struct os_event *ev)
         SC_INPUT_MODE = SC_INPUT_MODE_SUB;
     }
     else if (line[0] == 'k' && line[1] == ':') {
-        int hex_base_offset = 2; // Length of the "k:".
-        int hex_int = str_hex_to_char_dec(line + hex_base_offset);
-        console_printf("0x%d\n", hex_int);
-        console_printf("0x%x\n", hex_int);
+        uint8_t input[INPUT_SIZE];
+        for (int j = 0; j < INPUT_SIZE; j++)
+            input[j] = str_hex_to_char_dec(line + INPUT_BASE_OFFSET + j * 2);
+        dump_hex_uint8(input, INPUT_SIZE);
         SC_INPUT_SUB_OK = 1;
     }
     else if (!strcmp(line, "input_gen")) {
