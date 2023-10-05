@@ -7,7 +7,6 @@
 #include "screamingchannels/dump.h"
 #include "console/console.h"
 
-#define INPUT_SIZE 16 // 128-bits for keys and plaintexts
 #define INPUT_BASE_OFFSET 2 // Length of k: and p: used in commands.
 
 /** String hexadecimal to char decimal conversion. */
