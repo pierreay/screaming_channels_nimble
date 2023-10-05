@@ -42,7 +42,7 @@
 
 /* Application-specified header. */
 #include "bleprph.h"
-#include "screamingchannels_console.h"
+#include "screamingchannels/console.h"
 
 static int bleprph_gap_event(struct ble_gap_event *event, void *arg);
 
@@ -359,7 +359,7 @@ main_fn(int argc, char **argv)
     console_printf("============ \n ");
     console_printf("\n");
 
-    screamingchannels_console_init();
+    sc_console_init();
 
     while (1) {
         // console_printf("Console printf example!\n");
