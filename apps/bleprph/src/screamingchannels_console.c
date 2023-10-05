@@ -40,7 +40,15 @@ screamingchannels_process_input(struct os_event *ev)
     }
     else if (!strcmp(line, "input_sub")) {
         SC_INPUT_MODE = SC_INPUT_MODE_SUB;
-        // TODO: Fill input.
+    }
+    else if (line[0] == 'k' && line[1] == ':') {
+        char hex_str[3];
+        hex_str[0] = line[2];
+        hex_str[1] = line[3];
+        hex_str[2] = '\0';
+        int hex_int = strtol(hex_str, NULL, 16);
+        console_printf("0x%d\n", hex_int);
+        console_printf("0x%x\n", hex_int);
         SC_INPUT_SUB_OK = 1;
     }
     else if (!strcmp(line, "input_gen")) {
@@ -50,7 +58,7 @@ screamingchannels_process_input(struct os_event *ev)
         dump_sc_input();
     }
     else {
-        console_printf("commands: mode_train mode_attack mode_dump input_sub input_gen input_dump\n");
+        console_printf("commands: mode_train mode_attack mode_dump input_sub k: input_gen input_dump\n");
     }
     /* Done processing line. Add the event back to the avail_queue */
     console_line_event_put(ev);
