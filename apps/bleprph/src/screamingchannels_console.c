@@ -1,7 +1,9 @@
 #include <string.h>
+#include <stdlib.h>
 #include "screamingchannels_console.h"
 #include "screamingchannels/misc.h"
 #include "screamingchannels/input.h"
+#include "screamingchannels/dump.h"
 #include "console/console.h"
 
 static void screamingchannels_process_input(struct os_event *ev);
