@@ -6,6 +6,15 @@
 #include "screamingchannels/dump.h"
 #include "console/console.h"
 
+/** String hexadecimal to char decimal conversion. */
+char str_hex_to_char_dec(char * str) {
+    char hex_str[3];
+    hex_str[0] = str[0];
+    hex_str[1] = str[1];
+    hex_str[2] = '\0';
+    return strtol(hex_str, NULL, 16);
+}
+
 static void screamingchannels_process_input(struct os_event *ev);
 
 static struct console_input screamingchannels_console_buf;
@@ -42,11 +51,8 @@ screamingchannels_process_input(struct os_event *ev)
         SC_INPUT_MODE = SC_INPUT_MODE_SUB;
     }
     else if (line[0] == 'k' && line[1] == ':') {
-        char hex_str[3];
-        hex_str[0] = line[2];
-        hex_str[1] = line[3];
-        hex_str[2] = '\0';
-        int hex_int = strtol(hex_str, NULL, 16);
+        int hex_base_offset = 2; // Length of the "k:".
+        int hex_int = str_hex_to_char_dec(line + hex_base_offset);
         console_printf("0x%d\n", hex_int);
         console_printf("0x%x\n", hex_int);
         SC_INPUT_SUB_OK = 1;
