@@ -362,7 +362,6 @@ main_fn(int argc, char **argv)
     sc_console_init();
 
     while (1) {
-        // console_printf("Console printf example!\n");
         os_eventq_run(os_eventq_dflt_get());
     }
     return 0;
