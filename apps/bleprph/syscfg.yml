@@ -54,6 +54,8 @@ syscfg.vals:
     SC_TINYCRYPT_INSTR_LOOP_ENABLE: 1
     # TinyCrypt loops [default = 1].
     SC_TINYCRYPT_INSTR_LOOP_NB: 300
+    # TinyCrypt interrupts handling. NOTE: Not implement because not working.
+    SC_TINYCRYPT_INTERRUPTS_DISABLE: 0
 
     # TX power [dBm]. Default to 0 = 1mW. Can be positive or negative. Maximum
     # is 4 dBm for nRF52 which is a power class 2 device. Increasing it makes
