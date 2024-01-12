@@ -49,11 +49,11 @@ syscfg.vals:
 # ** Screaming Channels Instrumentation
 
     # Enable the radio after TinyCrypt encryption [0 = disabled ; 1 = enabled].
-    SC_TINYCRYPT_RADIO_ENABLE: 0
+    SC_TINYCRYPT_RADIO_ENABLE: 1
     # TinyCrypt instrumentation by looping [0 = disabled ; 1 = enabled].
-    SC_TINYCRYPT_INSTR_LOOP_ENABLE: 0
+    SC_TINYCRYPT_INSTR_LOOP_ENABLE: 1
     # TinyCrypt loops [default = 1].
-    SC_TINYCRYPT_INSTR_LOOP_NB: 1
+    SC_TINYCRYPT_INSTR_LOOP_NB: 100
     # TinyCrypt interrupts handling. NOTE: Not implement because not working.
     SC_TINYCRYPT_INTERRUPTS_DISABLE: 0
 
