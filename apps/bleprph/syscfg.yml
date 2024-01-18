@@ -53,7 +53,7 @@ syscfg.vals:
     # TinyCrypt instrumentation by looping [0 = disabled ; 1 = enabled].
     SC_TINYCRYPT_INSTR_LOOP_ENABLE: 1
     # TinyCrypt loops [default = 1].
-    SC_TINYCRYPT_INSTR_LOOP_NB: 100
+    SC_TINYCRYPT_INSTR_LOOP_NB: 300
     # TinyCrypt interrupts handling. NOTE: Not implement because not working.
     SC_TINYCRYPT_INTERRUPTS_DISABLE: 0
 
