@@ -18,17 +18,40 @@
 # under the License.
 #
 -->
+# Screaming Channels on Bluetooth Low Energy -- NimBLE
 
-# Apache Blinky
+## About
 
-## Overview
+Companion repository of the "Screaming Channels on Bluetooth Low Energy"
+project.
+
+See the [screaming_channels_ble](https://github.com/pierreay/screaming_channels_ble)
+repository for a complete overview of the project.
+
+## Submodules
+
+This firmware is composed of 4 submodules.
+
+Two of them are my own submodules:
+- [apache-mynewt-core](https://github.com/pierreay/screaming_channels_nimble_core) : The core of the Mynewt RTOS.
+- [apache-mynewt-nimble](https://github.com/pierreay/screaming_channels_nimble_nimble) : The BLE stack implementation.
+
+Two of them are legacy Apache submodules:
+- `apache-mynewt-mcumgr`
+- `mcuboot`
+
+# Original README
+
+## Apache Blinky
+
+### Overview
 
 Apache Blinky is a skeleton for new Apache Mynewt projects.  The user downloads
 this skeleton by issuing the "newt new" command (using Apache Newt).  Apache
 blinky also contains an example app and target for use with Apache Mynewt to
 help you get started.
 
-## Building
+### Building
 
 Apache Blinky contains an example Apache Mynewt application called blinky.
 When executed on suitably equipped hardware, this application repeatedly blinks
