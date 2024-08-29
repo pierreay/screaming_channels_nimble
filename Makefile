@@ -5,6 +5,7 @@ help:
 	@echo make compile
 	@echo make flash
 	@echo make target
+	@echo make clean
 	@echo "TARGETAPP=[bleprph|blinky|btshell]"
 
 all: flash
